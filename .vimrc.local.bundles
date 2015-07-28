@@ -1,0 +1,4 @@
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
