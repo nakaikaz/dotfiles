@@ -4,6 +4,8 @@
 " ビープ音を全て無効にする
 set visualbell t_vb=
 set noerrorbells
+" 行末の余分なスペースを取り除く
+autocmd BufWritePre * :%s/\s\+$//ge
 
 " ------------------------------------
 " neocomplete
