@@ -8,6 +8,16 @@ set noerrorbells
 autocmd BufWritePre * :%s/\s\+$//ge
 
 " ------------------------------------
+"
+" -----------------------------------
+augroup PHP
+	autocmd!
+	autocmd FileType php set makeprg=php\ -l\ %
+	" php -lの構文チェックでエラーがなければ「No syntax errors」の一行だけ出力される
+	autocmd BufWritePost *.php silent make | if len(getqflist()) !=1 | copen | else | cclose | endif
+augroup END
+
+" ------------------------------------
 " neocomplete
 " ------------------------------------
 "Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
@@ -128,7 +138,7 @@ let g:neosnippet#snippets_directory='~/Dropbox/vim/snippets'
 " -------------------------------------
 " indentLine
 " -------------------------------------
-set list listchars=tab:\¦\ 
+set list listchars=tab:\¦\
 " Vim
 let g:indentLine_color_term = 239
 
