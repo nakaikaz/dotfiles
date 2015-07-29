@@ -81,7 +81,7 @@ let g:vim_bootstrap_editor = "vim"				" nvim or vim
 "" Custom bundles
 
 "" Javascript Bundle
-"NeoBundle "scrooloose/syntastic"
+NeoBundle "scrooloose/syntastic"
 
 
 "" HTML Bundle
@@ -385,13 +385,13 @@ nnoremap <silent> <S-t> :tabnew<CR>
 "let g:UltiSnipsEditSplit="vertical"
 
 " syntastic
-"let g:syntastic_always_populate_loc_list=1
-"let g:syntastic_error_symbol='✗'
-"let g:syntastic_warning_symbol='⚠'
-"let g:syntastic_style_error_symbol = '✗'
-"let g:syntastic_style_warning_symbol = '⚠'
-"let g:syntastic_auto_loc_list=1
-"let g:syntastic_aggregate_errors = 1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol = '✗'
+let g:syntastic_style_warning_symbol = '⚠'
+let g:syntastic_auto_loc_list=1
+let g:syntastic_aggregate_errors = 1
 
 
 "" Copy/Paste/Cut

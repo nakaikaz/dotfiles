@@ -8,14 +8,22 @@ set noerrorbells
 autocmd BufWritePre * :%s/\s\+$//ge
 
 " ------------------------------------
-"
+" 半角スペース、全角スペース可視化
 " -----------------------------------
-augroup PHP
-	autocmd!
-	autocmd FileType php set makeprg=php\ -l\ %
-	" php -lの構文チェックでエラーがなければ「No syntax errors」の一行だけ出力される
-	autocmd BufWritePost *.php silent make | if len(getqflist()) !=1 | copen | else | cclose | endif
-augroup END
+set list
+set listchars=tab:\¦\ ,eol:¬
+"set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%,eol:$
+function! ZenkakuSpace()
+	highlight ZenkakuSpace cterm=reverse ctermfg=DarkGray gui=reverse guifg=DarkGray
+endfunction
+if has('syntax')
+	augroup ZenkakuSpace
+		autocmd!
+		autocmd ColorScheme * call ZenkakuSpace()
+		autocmd BufNew,BufRead * match ZenkakuSpace /　/
+	augroup END
+	call ZenkakuSpace()
+endif
 
 " ------------------------------------
 " neocomplete
@@ -138,7 +146,7 @@ let g:neosnippet#snippets_directory='~/Dropbox/vim/snippets'
 " -------------------------------------
 " indentLine
 " -------------------------------------
-set list listchars=tab:\¦\
+"set list listchars=tab:\¦\
 " Vim
 let g:indentLine_color_term = 239
 
@@ -148,3 +156,5 @@ let g:indentLine_color_gui = '#A4E57E'
 " none X terminal
 let g:indentLine_color_tty_light = 7 " (default: 4)
 let g:indentLine_color_dark = 1 " (default: 2)
+
+let g:indentLine_char = '¦'
