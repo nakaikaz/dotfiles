@@ -7,7 +7,7 @@ let $LUA_DLL="/usr/local/Cellar/lua/5.2.4_1/lib/liblua.dylib"
 set visualbell t_vb=
 set noerrorbells
 " 行末の余分なスペースを取り除く
-autocmd BufWritePre * :%s/\s\+$//ge
+"autocmd BufWritePre * :%s/\s\+$//ge
 
 " ------------------------------------
 " Undo履歴ファイル
