@@ -12,6 +12,7 @@ $ mv Brewfile dotfiles
 $ ln -sf ~/dotfiles/.vimrc ~/.vimrc  
 $ ln -sf ~/dotfiles/.vimrc.local ~/.vimrc.local  
 $ ln -sf ~/dotfiles/.vimrc.local.bundles ~/.vimrc.local.bundles  
+$ ln -sf ~/dotfiles/snippets/php_functions.php ~/.vim/snippets/php_functions.php  
 $ ln -sf ~/dotfiles/.bash_profile ~/.bash_profile  
 $ ln -sf ~/dotfiles/.wgetrc ~/.wgetrc  
 $ ln -sf ~/dotfiles/Brewfile ~/Brewfile  
